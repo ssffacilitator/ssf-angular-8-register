@@ -9,6 +9,7 @@ export class UserService {
   appUserUrl: string = "appUsers/"
 
   isLoggedIn : boolean = false;
+  firstName: string = '';
 
   constructor(private _http: HttpClient) { }
 

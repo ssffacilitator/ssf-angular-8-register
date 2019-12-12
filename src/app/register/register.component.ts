@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
     firstName: null,
     lastName: null,
     email: null,
-
     password: null,
   };
 
@@ -24,7 +23,9 @@ export class RegisterComponent implements OnInit {
   }
 
   signUp(){
-    this._userService.registerUser(this.form).subscribe( (res)=> {
+    this._userService.registerUser(this.form).subscribe( (res: any)=> {
+      console.log(res);
+      console.log('test');
       sessionStorage.setItem('token', res.token);
       sessionStorage.setItem('userId', res.userId);
       this._userService.firstName = res.firstName;
